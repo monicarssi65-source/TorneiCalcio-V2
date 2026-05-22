@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="wrap_content" android:padding="16dp">
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:text="🏆 Nuovo Torneo" android:textStyle="bold"
+            android:textSize="18sp" android:textColor="@color/red" android:layout_marginBottom="12dp"/>
+        <com.google.android.material.textfield.TextInputLayout android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:hint="Nome Torneo *" android:layout_marginBottom="8dp">
+            <com.google.android.material.textfield.TextInputEditText android:id="@+id/etName"
+                android:layout_width="match_parent" android:layout_height="wrap_content"/>
+        </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:hint="Società *" android:layout_marginBottom="8dp">
+            <com.google.android.material.textfield.TextInputEditText android:id="@+id/etSociety"
+                android:layout_width="match_parent" android:layout_height="wrap_content"/>
+        </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:hint="Categoria (es. Under 12)" android:layout_marginBottom="8dp">
+            <com.google.android.material.textfield.TextInputEditText android:id="@+id/etCategory"
+                android:layout_width="match_parent" android:layout_height="wrap_content"/>
+        </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:hint="Luogo" android:layout_marginBottom="8dp">
+            <com.google.android.material.textfield.TextInputEditText android:id="@+id/etLocation"
+                android:layout_width="match_parent" android:layout_height="wrap_content"/>
+        </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:hint="Data (es. 01/06/2026)" android:layout_marginBottom="8dp">
+            <com.google.android.material.textfield.TextInputEditText android:id="@+id/etDate"
+                android:layout_width="match_parent" android:layout_height="wrap_content"/>
+        </com.google.android.material.textfield.TextInputLayout>
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:text="Tipo Torneo" android:textStyle="bold" android:layout_marginBottom="4dp"/>
+        <Spinner android:id="@+id/spinnerType" android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:layout_marginBottom="8dp"/>
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="horizontal" android:layout_marginBottom="8dp">
+            <com.google.android.material.textfield.TextInputLayout android:layout_width="0dp"
+                android:layout_height="wrap_content" android:layout_weight="1"
+                android:hint="N. Gironi" android:layout_marginEnd="4dp">
+                <com.google.android.material.textfield.TextInputEditText android:id="@+id/etGroups"
+                    android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:inputType="number" android:text="3"/>
+            </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputLayout android:layout_width="0dp"
+                android:layout_height="wrap_content" android:layout_weight="1"
+                android:hint="Squadre/Girone" android:layout_marginStart="4dp" android:layout_marginEnd="4dp">
+                <com.google.android.material.textfield.TextInputEditText android:id="@+id/etTeamsPerGroup"
+                    android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:inputType="number" android:text="3"/>
+            </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputLayout android:layout_width="0dp"
+                android:layout_height="wrap_content" android:layout_weight="1"
+                android:hint="Qualificate/Girone" android:layout_marginStart="4dp">
+                <com.google.android.material.textfield.TextInputEditText android:id="@+id/etQualified"
+                    android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:inputType="number" android:text="1"/>
+            </com.google.android.material.textfield.TextInputLayout>
+        </LinearLayout>
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:text="Criteri Qualificazione" android:textStyle="bold" android:layout_marginBottom="4dp"/>
+        <Spinner android:id="@+id/spinnerCriteria" android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:layout_marginBottom="8dp"/>
+        <com.google.android.material.textfield.TextInputLayout android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:hint="Campi (es. Campo 1, Campo 2)"
+            android:layout_marginBottom="16dp">
+            <com.google.android.material.textfield.TextInputEditText android:id="@+id/etFields"
+                android:layout_width="match_parent" android:layout_height="wrap_content"/>
+        </com.google.android.material.textfield.TextInputLayout>
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <Button android:id="@+id/btnCancel" style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="0dp" android:layout_height="wrap_content"
+                android:layout_weight="1" android:layout_marginEnd="4dp" android:text="Annulla"/>
+            <Button android:id="@+id/btnSave" android:layout_width="0dp" android:layout_height="wrap_content"
+                android:layout_weight="1" android:layout_marginStart="4dp" android:text="Crea Torneo"
+                android:backgroundTint="@color/red" android:textColor="@android:color/white"/>
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>
