@@ -80,7 +80,8 @@
             android:layout_height="match_parent" android:visibility="gone">
             <TextView android:id="@+id/tvStandings" android:layout_width="match_parent"
                 android:layout_height="wrap_content" android:padding="12dp"
-                android:fontFamily="monospace" android:textSize="11sp"/>
+               android:fontFamily="monospace" android:textSize="11sp"
+                android:textColor="@color/gray"/>
         </ScrollView>
     </LinearLayout>
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
