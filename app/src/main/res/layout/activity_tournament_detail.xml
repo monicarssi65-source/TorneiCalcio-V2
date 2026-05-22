@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:background="@color/background">
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent" android:layout_height="wrap_content">
+        <androidx.appcompat.widget.Toolbar android:id="@+id/toolbar"
+            android:layout_width="match_parent" android:layout_height="?attr/actionBarSize"
+            android:background="@color/red" app:titleTextColor="@android:color/white"/>
+    </com.google.android.material.appbar.AppBarLayout>
+    <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent"
+        android:orientation="vertical" app:layout_behavior="@string/appbar_scrolling_view_behavior">
+        <!-- Tab bar -->
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="horizontal" android:background="@android:color/white" android:elevation="4dp">
+            <Button android:id="@+id/btnTabTeams" style="@style/Widget.MaterialComponents.Button.TextButton"
+                android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1"
+                android:text="👥 Squadre" android:textColor="@color/red"/>
+            <Button android:id="@+id/btnTabMatches" style="@style/Widget.MaterialComponents.Button.TextButton"
+                android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1"
+                android:text="⚽ Partite" android:textColor="@color/gray"/>
+            <Button android:id="@+id/btnTabStandings" style="@style/Widget.MaterialComponents.Button.TextButton"
+                android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1"
+                android:text="📊 Classifica" android:textColor="@color/gray"/>
+        </LinearLayout>
+        <!-- Action buttons row -->
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="horizontal" android:padding="6dp" android:background="@color/yellow_light">
+            <Button android:id="@+id/btnGoFinals" android:layout_width="0dp" android:layout_height="wrap_content"
+                android:layout_weight="1" android:layout_marginEnd="3dp" android:text="🏆 Finali"
+                android:backgroundTint="@color/red" android:textColor="@android:color/white" android:textSize="11sp"/>
+            <Button android:id="@+id/btnGoScorers" android:layout_width="0dp" android:layout_height="wrap_content"
+                android:layout_weight="1" android:layout_marginStart="3dp" android:layout_marginEnd="3dp"
+                android:text="⚽ Cannonieri" android:backgroundTint="@color/yellow"
+                android:textColor="@android:color/black" android:textSize="11sp"/>
+            <Button android:id="@+id/btnShareText" android:layout_width="0dp" android:layout_height="wrap_content"
+                android:layout_weight="1" android:layout_marginStart="3dp" android:layout_marginEnd="3dp"
+                android:text="📤 Condividi" android:backgroundTint="#4CAF50"
+                android:textColor="@android:color/white" android:textSize="11sp"/>
+            <Button android:id="@+id/btnExportPdf" android:layout_width="0dp" android:layout_height="wrap_content"
+                android:layout_weight="1" android:layout_marginStart="3dp" android:text="📄 PDF"
+                android:backgroundTint="#1565C0" android:textColor="@android:color/white" android:textSize="11sp"/>
+        </LinearLayout>
+        <!-- Teams panel -->
+        <FrameLayout android:id="@+id/panelTeams" android:layout_width="match_parent" android:layout_height="match_parent">
+            <androidx.recyclerview.widget.RecyclerView android:id="@+id/rvTeams"
+                android:layout_width="match_parent" android:layout_height="match_parent"
+                android:padding="8dp" android:clipToPadding="false" android:paddingBottom="80dp"/>
+            <TextView android:id="@+id/tvTeamsEmpty" android:layout_width="match_parent"
+                android:layout_height="match_parent" android:gravity="center"
+                android:text="Nessuna squadra\nTocca + per aggiungerne"
+                android:textColor="@color/gray" android:visibility="gone"/>
+            <com.google.android.material.floatingactionbutton.FloatingActionButton android:id="@+id/fabTeam"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:layout_gravity="bottom|end" android:layout_margin="16dp"
+                android:src="@android:drawable/ic_input_add"
+                app:backgroundTint="@color/yellow" app:tint="@android:color/black"/>
+        </FrameLayout>
+        <!-- Matches panel -->
+        <LinearLayout android:id="@+id/panelMatches" android:layout_width="match_parent"
+            android:layout_height="match_parent" android:orientation="vertical" android:visibility="gone">
+            <Button android:id="@+id/btnGenerateCalendar" android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:layout_margin="8dp"
+                android:text="🗓️ Genera Calendario Round-Robin"
+                android:backgroundTint="@color/red" android:textColor="@android:color/white"/>
+            <FrameLayout android:layout_width="match_parent" android:layout_height="match_parent">
+                <androidx.recyclerview.widget.RecyclerView android:id="@+id/rvMatches"
+                    android:layout_width="match_parent" android:layout_height="match_parent"
+                    android:padding="8dp" android:clipToPadding="false"/>
+                <TextView android:id="@+id/tvMatchesEmpty" android:layout_width="match_parent"
+                    android:layout_height="match_parent" android:gravity="center"
+                    android:text="Nessuna partita\nGenera il calendario"
+                    android:textColor="@color/gray" android:visibility="gone"/>
+            </FrameLayout>
+        </LinearLayout>
+        <!-- Standings panel -->
+        <ScrollView android:id="@+id/panelStandings" android:layout_width="match_parent"
+            android:layout_height="match_parent" android:visibility="gone">
+            <TextView android:id="@+id/tvStandings" android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:padding="12dp"
+                android:fontFamily="monospace" android:textSize="11sp"/>
+        </ScrollView>
+    </LinearLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
