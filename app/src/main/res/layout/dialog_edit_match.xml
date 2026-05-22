@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="wrap_content" android:padding="16dp">
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <TextView android:id="@+id/tvTitle" android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:textStyle="bold"
+            android:textSize="16sp" android:textColor="@color/red"
+            android:gravity="center" android:layout_marginBottom="12dp"/>
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="horizontal" android:layout_marginBottom="8dp">
+            <com.google.android.material.textfield.TextInputLayout android:layout_width="0dp"
+                android:layout_height="wrap_content" android:layout_weight="1"
+                android:hint="🏟️ Campo" android:layout_marginEnd="4dp">
+                <com.google.android.material.textfield.TextInputEditText android:id="@+id/etField"
+                    android:layout_width="match_parent" android:layout_height="wrap_content"/>
+            </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputLayout android:layout_width="0dp"
+                android:layout_height="wrap_content" android:layout_weight="1"
+                android:hint="🕐 Orario" android:layout_marginStart="4dp">
+                <com.google.android.material.textfield.TextInputEditText android:id="@+id/etTime"
+                    android:layout_width="match_parent" android:layout_height="wrap_content"/>
+            </com.google.android.material.textfield.TextInputLayout>
+        </LinearLayout>
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:text="⚽ Risultato" android:textStyle="bold" android:layout_marginBottom="8dp"/>
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="horizontal" android:gravity="center" android:layout_marginBottom="12dp">
+            <com.google.android.material.textfield.TextInputLayout android:layout_width="0dp"
+                android:layout_height="wrap_content" android:layout_weight="1" android:layout_marginEnd="8dp">
+                <com.google.android.material.textfield.TextInputEditText android:id="@+id/etHomeScore"
+                    android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:inputType="number" android:gravity="center"/>
+            </com.google.android.material.textfield.TextInputLayout>
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text=" - " android:textSize="24sp" android:textStyle="bold"/>
+            <com.google.android.material.textfield.TextInputLayout android:layout_width="0dp"
+                android:layout_height="wrap_content" android:layout_weight="1" android:layout_marginStart="8dp">
+                <com.google.android.material.textfield.TextInputEditText android:id="@+id/etAwayScore"
+                    android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:inputType="number" android:gravity="center"/>
+            </com.google.android.material.textfield.TextInputLayout>
+        </LinearLayout>
+        <TextView android:id="@+id/tvHomeScorersLabel" android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:textStyle="bold"
+            android:layout_marginBottom="4dp" android:textSize="13sp"/>
+        <com.google.android.material.textfield.TextInputLayout android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:hint="es. Rossi, Bianchi, Verdi"
+            android:layout_marginBottom="8dp">
+            <com.google.android.material.textfield.TextInputEditText android:id="@+id/etHomeScorers"
+                android:layout_width="match_parent" android:layout_height="wrap_content"/>
+        </com.google.android.material.textfield.TextInputLayout>
+        <TextView android:id="@+id/tvAwayScorersLabel" android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:textStyle="bold"
+            android:layout_marginBottom="4dp" android:textSize="13sp"/>
+        <com.google.android.material.textfield.TextInputLayout android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:hint="es. Ferrari, Colombo"
+            android:layout_marginBottom="16dp">
+            <com.google.android.material.textfield.TextInputEditText android:id="@+id/etAwayScorers"
+                android:layout_width="match_parent" android:layout_height="wrap_content"/>
+        </com.google.android.material.textfield.TextInputLayout>
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <Button android:id="@+id/btnCancel" style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="0dp" android:layout_height="wrap_content"
+                android:layout_weight="1" android:layout_marginEnd="4dp" android:text="Annulla"/>
+            <Button android:id="@+id/btnSave" android:layout_width="0dp" android:layout_height="wrap_content"
+                android:layout_weight="1" android:layout_marginStart="4dp" android:text="💾 Salva"
+                android:backgroundTint="@color/red" android:textColor="@android:color/white"/>
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>
