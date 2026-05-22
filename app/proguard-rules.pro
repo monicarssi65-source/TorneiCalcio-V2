@@ -1,0 +1,3 @@
+-keep class com.torneicalcio.app.data.** { *; }
+-keep class com.itextpdf.** { *; }
+-dontwarn com.itextpdf.**
